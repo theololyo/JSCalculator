@@ -1,0 +1,40 @@
+#calculator {
+  max-width: 800px;
+  min-width: 380px;
+}
+
+#calc-container #calc-display {
+  text-align: right;
+  padding: 10px;
+}
+#calc-container #calc-buttons > div {
+  margin: 20px 0;
+}
+#calc-container #calc-display {
+  position: relative;
+  margin: 0 5%;
+}
+#calc-container #calc-display #calc-display-last {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+#calc-container #calc-display #calc-display-current {
+  font-size: 3em;
+}
+
+#calc-container #calc-display #calc-display-current:before {
+  content: "\200b";
+}
+#calc-container #calc-num-buttons button {
+  width: 30%;
+}
+#calc-container .calc-button-row {
+  margin: 10px 0;
+  text-align: center;
+}
+#calc-container .calc-button-row button {
+  width: 20%;
+  height: 44px;
+  font-size: 1.4em;
+}

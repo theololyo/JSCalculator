@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator - uppgiften</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/calculator.css" media="screen" title="no title">
+</head>
+
+<body>
+    <div id="calculator">
+        <div id="calc-container">
+            <div id="calc-display">
+                <span id="calc-display-last"></span>
+                <span id="calc-display-current">0</span>
+            </div>
+            <div id="calc-buttons">
+                <div id="calc-num-buttons">
+                    <div class="calc-button-row">
+                        <button data-button-type="1" data-value="7">7</button>
+                        <button data-button-type="1" data-value="8">8</button>
+                        <button data-button-type="1" data-value="9">9</button>
+                    </div>
+                    <div class="calc-button-row">
+                        <button data-button-type="1" data-value="4">4</button>
+                        <button data-button-type="1" data-value="5">5</button>
+                        <button data-button-type="1" data-value="6">6</button>
+                    </div>
+                    <div class="calc-button-row">
+                        <button data-button-type="1" data-value="1">1</button>
+                        <button data-button-type="1" data-value="2">2</button>
+                        <button data-button-type="1" data-value="3">3</button>
+                    </div>
+                    <div class="calc-button-row">
+                        <button data-button-type="1" data-value=".">.</button>
+                        <button data-button-type="1" data-value="0">0</button>
+                        <button data-button-type="0" data-operator="=">=</button>
+                    </div>
+                </div>
+                <div id="calc-operation-buttons">
+                    <div class="calc-button-row">
+                        <button data-button-type="0" data-operator="+">+</button>
+                        <button data-button-type="0" data-operator="-">-</button>
+                        <button data-button-type="0" data-operator="*">*</button>
+                        <button data-button-type="0" data-operator="/">/</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ladda dina JS filer här -->
+    <script src='js/bignumber.min.js'></script>
+    <script src="js/ArithmeticFactory.js"></script>
+    <script src="js/CalcStack.js"></script>
+    <script src="js/app.js"></script>
+    <!-- Ladda dina JS filer här -->
+
+    <!-- Om du vill starta ditt script -->
+    <script>
+    </script>
+    <!-- Om du vill starta ditt script -->
+</body>
+
+</html>
