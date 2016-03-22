@@ -1,5 +1,6 @@
 /**
- * Created by Theo on 2016-03-12.
+ * Represents a container for mathematical expressions
+ * with a set of related operations
  */
 "use strict";
 var CalcStack = function () {
@@ -8,7 +9,7 @@ var CalcStack = function () {
     var calcIsArmed = false;
 
     /**
-     *
+     * Returns the current expression as a string
      */
     this.getExpression = function () {
         var tempStr = "";
@@ -20,33 +21,37 @@ var CalcStack = function () {
     };
 
     /**
-     *
+     * Returns if the CalcStack is empty or not
      */
     this.isEmpty = function () {
         return storeage.length < 1;
     }
 
     /**
-     *
+     * Returns true if the stack contains a number and an operator
      */
     this.isArmed = function () {
         return calcIsArmed;
     };
 
     /**
-     *
+     * Sets if the stack contains a number and an operator
+     * @parameter armCalc arming the stack
      */
-    this.setIsArmed = function (truefalse) {
-        calcIsArmed = truefalse;
+    this.setIsArmed = function (armCalc) {
+        calcIsArmed = armCalc;
     };
 
     /**
-     *
+     * Empties the CalcStack
      */
     this.flush = function () {
         storeage.length = 0;
     };
 
+    /**
+     * Returns the last element in the CalcStack
+     */
     this.peek = function () {
         if (storeage.length < 1) {
             return storeage[0];
@@ -56,7 +61,8 @@ var CalcStack = function () {
     };
 
     /**
-     *
+     * Evaluates the currently stored expression.
+     * Returns an error if expression evaluation fails
      */
     this.calculateExpression = function () {
         try {
@@ -74,7 +80,9 @@ var CalcStack = function () {
     }
 
     /**
-     *
+     * Adds a value to the CalcStack depending, evaluates the expression
+     * if the expression is complete
+     * @parameter calcObject the data to store in the CalcStack
      */
     this.pushValue = function (calcObject) {
         if (calcObject.Type === 0) {

@@ -1,25 +1,25 @@
-//
+/**
+ * Encloses and invokes the application to keep the global scope clean
+ */
 (function (calc) {
     "use strict";
 
-    var currentValue
-        , lastvalue
-        , currentType
-        , calcStack = new CalcStack()
-        , expression = " "
+    var calcStack = new CalcStack()
+        , expression = ""
         , arithmeticFactory = new ArithmeticFactory()
         , hasEquals = false
         , currentDisplay = document.getElementById("calc-display-current")
         , lastDisplay = document.getElementById("calc-display-last");
 
-    /*
-     *
+    /**
+     * Clears the display showing the current input
      */
     function clearCurrent() {
         currentDisplay.innerHTML = "";
     }
 
-    /*
+    /**
+     *Resets the application to its initial state
      *
      */
     function reset() {
@@ -29,24 +29,10 @@
 
     }
 
-    //
-
-    /*
-     *
-     */
-    window.addEventListener("keydown", function (ev) {
-        if (ev.keyCode === 46) {
-            reset();
-        }
-    });
-
-    //
-    window.addEventListener("click", btnClicked, true);
-
-    clearCurrent();
-
-    /*
-     *
+    /**
+     * Responds to clickevents on the applications buttons.
+     * Performs actions depending on the value of the clicked button
+     * @parameter ev information regarding the object the triggered the event
      */
     function btnClicked(ev) {
 
@@ -83,6 +69,25 @@
 
         }
     }
+
+    /**
+     * Resets the application when the DELETE-key is pressed
+     */
+    window.addEventListener("keydown", function (ev) {
+        if (ev.keyCode === 46) {
+            reset();
+        }
+    });
+
+    /**
+     * Listens for clickevents, invokes application logic when
+     * a button is pressed
+     */
+    window.addEventListener("click", btnClicked, true);
+
+    clearCurrent();
+
+
 
 
 
